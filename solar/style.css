@@ -1,0 +1,182 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* overflow-x: hidden; */
+    /* overflow-y: hidden; */
+}
+.container{
+    background-color: black;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: -21;
+    overflow-y: hidden;
+}
+
+.earth{
+    border-color:  aqua transparent transparent transparent ;
+    border-width:0.1em 0.3em 0 0;
+    border-style: solid;
+    border-radius: 50%;
+    height: 600px;
+    width: 600px;
+    position: relative;
+    animation: rotate linear 20s infinite;
+    z-index: 20;
+}
+.earth::before{
+    content: '';
+    border-radius: 50%;
+    border: solid rgb(0, 255, 72);
+    border-width: .3em .3em .1em .1em;
+    background-color: aqua;
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    top: -20px;
+    box-shadow: 2px 2px 30px rgb(0, 255, 170);
+    right: 0px;
+    z-index: 2;
+    animation: rotate linear 3s infinite;
+
+
+}
+@keyframes rotate {
+    to{
+        transform: rotate(360deg);
+    }
+    
+}
+.moon{
+    position: absolute;
+    /* background-color: brown; */
+    border-color:  white  transparent transparent transparent ;
+    border-width:0.1em 0.3em 0 0;
+    border-style: solid;
+    height: 250px;
+    width: 250px;
+    top: -70px;
+    border-radius: 50%;
+        animation: rotate linear 5s infinite;
+        right: -54px;
+        z-index: 3;
+}
+.moon::before{
+    content: '';
+    height: 50px;
+    width: 50px;
+    border: solid grey;
+    border-width: .1em 0.1em 0.3em 0.3em;
+    background-color: white;
+    position: absolute;
+    border-radius: 50%;
+    top:6px ;
+    right: 8px;
+    animation: rotate linear 3s infinite;
+
+
+
+
+}
+.sun{
+    height:300px;
+    width: 300px;
+    background-color: yellow;
+    position: absolute;
+    border-radius: 50%;
+    animation: rotate linear 3s infinite;
+    border-style: solid;
+    border-width: .1em 0.5em 0 0;
+    border-color: rgb(255, 136, 0);
+    z-index: 1;
+    box-shadow: 2px 0 50px rgb(255, 170, 0);
+
+
+}
+.star
+{
+    height: 100vh;
+    background: linear-gradient(#070334bc, #4856f0d1);
+    width: 100%;
+    z-index: -20;
+    display: flex;
+    flex-wrap:wrap ;
+    padding-top: 10px;
+    gap: 50px;
+    position: absolute;
+    top: 0px;
+    transition: all 1s ease;
+    
+    
+}
+.c{
+    border-radius: 50%;
+    height: 3px;
+    width: 3px;
+    border: 2px solid silver;
+    box-shadow: 2px 2px 2px white;
+    animation: scale 1s infinite;
+    animation-delay: 1s;
+}
+
+@keyframes scale {
+    0%
+    {
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.5);
+    }
+    100%{
+        transform: scale(1);
+    }
+    
+}
+.clock{
+    height: 50px;
+    width: 300px;
+    /* border: 2px solid black; */
+    /* background-color: red; */
+    position: absolute;
+    top: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 44px;
+    font-weight: 500;
+    z-index: 6;
+    text-shadow: 8px 1px 8px orange;
+    font-family: sans-serif;
+
+}
+.add{
+    transition: all 2s ease;
+    background: linear-gradient(black,rgb(52, 52, 52));
+}
+.sunadd{
+    box-shadow: none;
+}
+/* .weather{
+    height: 700px;
+    width: 300px;
+    border: 2px solid red;
+    z-index: 100;
+    position: absolute;
+    top: 50px;
+    right: 60px;
+}
+.weather1{
+    height: 700px;
+    width: 300px;
+    border: 2px solid red;
+    z-index: 100;
+    position: absolute;
+    top: 50px;
+    left: 60px;
+}
+ */
+
